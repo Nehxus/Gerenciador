@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+:root {
+  --primary-color: rgb(17, 86, 102);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #1919a0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container, .container-password, .container-input {
+  max-width: 640px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.container-input span, .title {
+  color: #000;  /* Alterado para preto */
+  font-size: 22px;
+}
+
+.slider {
+  margin-top: 8px;
+  width: 100%;
+  height: 28px;
+  border-radius: 5px;
+  background: #DFDFDF;
+  outline: none;
+  opacity: 0.7;
+}
+
+input[type="text"] {
+  width: calc(50% - 10px);
+  height: 40px;
+  margin-top: 20px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-cta, .btn-add, .botaoExibirSenhas {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  background-color: #3EB72B;
+  border: 0;
+  border-radius: 20px;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-cta:hover, .btn-add:hover, .botaoExibirSenhas:hover {
+  background-color: var(--primary-color-darker);
+}
+
+.container-password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.password {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #313131;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 24px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.password:hover {
+  transform: scale(1.05);
+  border-color: #FFF;
+}
+
+.tooltip {
+  color: #FFF;
+  background: #0F0F0F;
+  padding: 6px 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  position: relative;
+  top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.container-password:hover .tooltip {
+  top: -20px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.senhasLi {
+  margin-top: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Apagar {
+  background-color: red;
+  color: #FFF;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Apagar:hover {
+  background-color: darkred;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hide {
+  display: none;
+}

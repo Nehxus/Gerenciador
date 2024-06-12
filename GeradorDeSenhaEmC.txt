@@ -1,0 +1,40 @@
+#include <stdio.h>  // Biblioteca de entrada e saída
+#include <stdlib.h> // Alocação de memória, conversões numéricas, controle de processos e outras operações padrão.
+#include <string.h> // Manipulação de strings.
+#include <time.h>   // Para usar a função time()
+
+// Define a string de caracteres permitidos para a senha
+const char letrasNumeCaracEsp[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+
+// Função para gerar uma senha aleatória
+// Essa função receberá o valor tamanho(parametro) que o usuário inputar na função main.
+void gerarSenha(int tamanho) {
+    char senhaGerada[tamanho + 1]; // +1 para o caractere nulo no final da string ex: era 10 ficou 11;
+    for (int i = 0; i < tamanho; i++) {
+        int indiceAleatorio = rand() % strlen(letrasNumeCaracEsp); // rand() gera um num aleatório, strlen() descobre o tamanho da string
+        senhaGerada[i] = letrasNumeCaracEsp[indiceAleatorio];
+    }
+    senhaGerada[tamanho] = '\0'; // Adiciona o caractere nulo no final para encerrar a string;
+
+    printf("Senha gerada: %s\n", senhaGerada);
+}
+
+int main() {
+    char resp;
+    // Inicializa o gerador de números aleatórios com uma semente baseada no tempo atual
+    srand(time(NULL));//Quando você usa srand(time(NULL)), você está inicializando o gerador de números aleatórios com a hora atual.
+    do{
+    int tamanhoSenha;
+    puts("É altamente recomendado que a senha tenha no mínimo 12 caracteres");
+    puts("Digite quantos caracteres você quer que sua senha tenha");
+    scanf("%d", &tamanhoSenha);
+    if (tamanhoSenha < 12) {
+        puts("Senha é menor que o mínimo recomendado!!");
+    }
+    // Chama a função gerarSenha e passa o argumento (tamanho que quero da minha senha)
+    gerarSenha(tamanhoSenha);
+    puts("Deseja gerar mais alguma senha? S/N");
+    scanf("%s", &resp);
+}while(resp != 'N' && resp != 'n');
+    return 0;
+}
